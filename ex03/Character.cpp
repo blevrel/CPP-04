@@ -33,11 +33,9 @@ Character::Character(std::string const & name)
 
 Character::Character(Character const & other)
 {
-	int	i;
 
 	this->type = other.getName;
-	for (i = 0; i < 4; i++);
-		
+	this->inventory = other.getInventory();
 	std::cout << "Character copy constructor called" << std::endl;
 }
 
@@ -58,6 +56,7 @@ std::string const & Character::getName(void) const
 
 AMateria** const & Character::getInventory(void) const
 {
+//si ca marche pas, return les lignes une par une
 	return (this->inventory);
 }
 
