@@ -6,24 +6,23 @@
 /*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 10:40:57 by blevrel           #+#    #+#             */
-/*   Updated: 2022/12/10 10:43:22 by blevrel          ###   ########.fr       */
+/*   Updated: 2023/01/10 13:51:35 by blevrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Dog.hpp"
-#include "WrongCat.hpp"
-#define ARR_SIZE 10 
+#include "Cat.hpp"
 
 int main()
 {
-	//Animal*	animal = new Animal();
-	Cat*	cat = new Cat();
-	Dog*	dog = new Dog();
+	//next line should cause a compilation error because Animal is now an abstract class and can not be instantiated
+	//Animal	*animal = new Animal;
+	Dog	a;
+	Cat	b;
 
-	std::cout << cat->getType() << std::endl;
-	std::cout << dog->getType() << std::endl;
-	cat->makeSound();
-	dog->makeSound();
-	delete cat;
-	delete dog;
+	a.makeSound();
+	b.makeSound();
+
+	a.printIdeas();
+	b.printIdeas();
 	return (0);
 }

@@ -6,17 +6,15 @@
 /*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 10:13:47 by blevrel           #+#    #+#             */
-/*   Updated: 2022/12/10 10:30:06 by blevrel          ###   ########.fr       */
+/*   Updated: 2023/01/10 10:50:50 by blevrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 #include <iostream>
 
 class	Animal
 {
-
-protected:
-
-	std::string	type;
 
 public:
 
@@ -26,5 +24,12 @@ public:
 	std::string	getType(void) const;
 	virtual void	makeSound(void) const;
 	virtual void	printIdeas(void) const;
-	Animal& 	operator=(const Animal& other);
+	Animal& 		operator=(const Animal& other);
+
+protected:
+
+	std::string	_type;
+
 };
+
+#endif

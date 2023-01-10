@@ -6,18 +6,30 @@
 /*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 10:40:57 by blevrel           #+#    #+#             */
-/*   Updated: 2022/12/10 10:39:23 by blevrel          ###   ########.fr       */
+/*   Updated: 2023/01/10 11:53:11 by blevrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Dog.hpp"
-#include "WrongCat.hpp"
-#define ARR_SIZE 10 
+#define ARR_SIZE 2 
 
 int main()
 {
 	int	i;
-	Animal*	arr[ARR_SIZE];
-	
+	Animal	*arr[ARR_SIZE];
+	Dog		*a = new Dog;
+	Animal	*a_deep_cpy = new Dog(*a);
+	Animal	*a_operator_cpy = new Cat;
+
+	*a_operator_cpy = *a_deep_cpy;
+	//testing deep copy of dog
+	a->makeSound();
+	delete a;
+	a_deep_cpy->makeSound();
+	a_operator_cpy->makeSound();
+	delete a_deep_cpy;
+	delete a_operator_cpy;
+
+	//filling array with half cats half dogs and printing the ideas of two as an example
 	for (i = 0; i < ARR_SIZE / 2; i++)
 		arr[i] = new Dog();
 	for (i = ARR_SIZE / 2; i < ARR_SIZE; i++)
@@ -28,5 +40,6 @@ int main()
 	arr[ARR_SIZE - 1]->printIdeas();
 	for (i = 0; i < ARR_SIZE; i++)
 		delete arr[i];
+
 	return (0);
 }

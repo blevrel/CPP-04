@@ -6,9 +6,11 @@
 /*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:53:04 by blevrel           #+#    #+#             */
-/*   Updated: 2022/12/08 15:42:36 by blevrel          ###   ########.fr       */
+/*   Updated: 2023/01/10 10:41:30 by blevrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 #include "WrongAnimal.hpp"
 
 class	WrongCat : public WrongAnimal
@@ -20,6 +22,8 @@ public:
 	WrongCat(const WrongCat& other);
 	~WrongCat(void);
 	std::string	getType(void) const;
-	void	makeSound(void) const;
-	WrongCat& 	operator=(WrongCat& other);
+	void		makeSound(void) const;
+	WrongCat& 	operator=(const WrongCat& other);
 };
+
+#endif
