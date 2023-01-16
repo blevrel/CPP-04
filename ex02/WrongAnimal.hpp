@@ -6,7 +6,7 @@
 /*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:49:40 by blevrel           #+#    #+#             */
-/*   Updated: 2023/01/13 09:14:35 by blevrel          ###   ########.fr       */
+/*   Updated: 2023/01/16 10:32:54 by blevrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef WRONGANIMAL_HPP
@@ -23,6 +23,7 @@ public:
 	~WrongAnimal(void);
 	std::string		getType(void) const;
 	void	makeSound(void) const;
+	std::string		getType(void) const;
 	WrongAnimal& 	operator=(const WrongAnimal& other);
 
 protected:

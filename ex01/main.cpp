@@ -6,7 +6,8 @@
 /*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 10:40:57 by blevrel           #+#    #+#             */
-/*   Updated: 2023/01/13 10:24:34 by blevrel          ###   ########.fr       */
+/*   Updated: 2023/01/16 10:34:24 by blevrel          ###   ########.fr       */
+/*                                                                            */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Dog.hpp"
@@ -21,6 +22,8 @@ int main()
 	Animal	*a_operator_cpy = new Dog;
 
 	*a_operator_cpy = *a_deep_cpy;
+
+	//testing deep copy of dog
 	a->makeSound();
 	delete a;
 	a_deep_cpy->makeSound();

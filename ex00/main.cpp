@@ -6,7 +6,11 @@
 /*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 10:40:57 by blevrel           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/01/13 10:26:30 by blevrel          ###   ########.fr       */
+=======
+/*   Updated: 2023/01/10 10:36:46 by blevrel          ###   ########.fr       */
+>>>>>>> d4fc6065ccaace3f258e4947ec074d5262009ff8
 /*   Updated: 2023/01/09 17:08:16 by blevrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -20,7 +24,11 @@ int main()
 	Animal *b = new Dog();
 	Animal *c = new Cat();
 	WrongAnimal *d = new WrongCat();
+<<<<<<< HEAD
 	Cat			*cat_to_cpy = new Cat();
+=======
+	Cat			*cat_to_cpy = new Cat;
+>>>>>>> d4fc6065ccaace3f258e4947ec074d5262009ff8
 	Animal		e;
 	Cat			f;
 	Dog			g;
@@ -31,6 +39,7 @@ int main()
 	WrongCat	l;
 	WrongCat	m(l);
 	Animal		*cat_cpy = new Cat(*cat_to_cpy);
+<<<<<<< HEAD
 	Animal		*cat_operator_cpy = new Cat;
 	
 	*cat_operator_cpy = *cat_cpy;
@@ -39,6 +48,15 @@ int main()
 	cat_operator_cpy->makeSound();
 	delete cat_cpy;
 	delete cat_operator_cpy;
+=======
+	Animal		*cat_operator_cpy;
+	
+	//creating a deep copy of c
+	cat_operator_cpy = cat_cpy;
+	//deleting 'c' to check that 'cat_cpy' is a deep copy and is independant from 'c'
+	delete cat_to_cpy;
+	cat_operator_cpy->makeSound();
+>>>>>>> d4fc6065ccaace3f258e4947ec074d5262009ff8
 
 	//printing type of all the differents instatiations
 	std::cout << a->getType() << " " << std::endl;
@@ -73,6 +91,7 @@ int main()
 	delete b;
 	delete c;
 	delete d;
+	delete cat_cpy;
 
 	return (0);
 }
