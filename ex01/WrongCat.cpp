@@ -6,19 +6,20 @@
 /*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 15:09:18 by blevrel           #+#    #+#             */
-/*   Updated: 2022/12/08 15:13:40 by blevrel          ###   ########.fr       */
+/*   Updated: 2023/01/10 10:42:24 by blevrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat(void)
 {
-	this->type = "WrongCat";
+	this->_type = "WrongCat";
 	std::cout << "WrongCat default constructor called." << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
 {
+	this->_type = other.getType();
 	std::cout << "WrongCat copy constructor called." << std::endl;
 }
 
@@ -29,7 +30,7 @@ WrongCat::~WrongCat(void)
 
 std::string	WrongCat::getType(void) const
 {
-	return (this->type);
+	return (this->_type);
 }
 
 void	WrongCat::makeSound(void) const
@@ -37,8 +38,9 @@ void	WrongCat::makeSound(void) const
 	std::cout << "moo" << std::endl;
 }
 
-WrongCat&	WrongCat::operator=(WrongCat &other)
+WrongCat&	WrongCat::operator=(const WrongCat &other)
 {
 	std::cout << "WrongCat assignment operator called." << std::endl;
-	return (other);
+	this->_type = other.getType();
+	return (*this);
 }
